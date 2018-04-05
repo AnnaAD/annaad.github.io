@@ -8,21 +8,17 @@ ctx.canvas.height = window.innerHeight - document.getElementById("nav").offsetHe
 
 var cityList = [];
 
-var funCity = createCity(10,10,10,10);
-cityList.push(funCity);
 updateDraw();
-
-
-
 
 
 function createCity(x, y, republican, democrat) {
 	var city = {pop: republican + democrat, republican:republican, democrat:democrat, radius:0, x:x, y:y};
-	city.radius = city.pop/100;
+	city.radius = city.pop;
 	return city;
 }
 
 function drawCity(city) {
+	console.log("rendering");
 	var percentDem = city.democrat/city.pop;
 	var percentRep = city.republican/city.pop;
 	if (percentRep > percentDem) {
@@ -39,7 +35,10 @@ function drawCity(city) {
 	ctx.beginPath();
 	ctx.arc(city.x,city.y,city.radius,2*Math.PI, false);
 	ctx.fillStyle = "rgb(" + valRed + " , " + valGreen + ", " + valBlue + ") ";
-	ctx.fill(); 
+	ctx.fill();
+	ctx.lineWidth = 2;
+	ctx.strokeStyle =  "#000000";
+	ctx.stroke();
 }
 
 function drawCityData(city, e) {
@@ -50,7 +49,8 @@ function drawCityData(city, e) {
 
 function intersectCity(x,y,city) {
 	console.log("checking");
-	if(Math.sqrt(Math.pow(x-city.x, 2)+Math.pow(y-city.y, 2)) < city.radius) {
+	console.log(Math.hypot(x-city.x,y-city.y));
+	if(Math.hypot(x-city.x,y-city.y) < city.radius) {
 		return true;
 	} else {
 		return false;
