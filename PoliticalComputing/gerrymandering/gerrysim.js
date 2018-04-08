@@ -7,8 +7,11 @@ ctx.canvas.width  = window.innerWidth;
 ctx.canvas.height = window.innerHeight - document.getElementById("nav").offsetHeight;
 
 var cityList = [];
+var districtList = [];
+var workingNodes = [];
 
 updateDraw();
+
 
 
 function createCity(x, y, republican, democrat) {
@@ -17,8 +20,18 @@ function createCity(x, y, republican, democrat) {
 	return city;
 }
 
+function createNode(parent,x,y) {
+	var node = {parent:parent, x:x, y:y};
+	return node;
+}
+
+function createDistrict(nodes) {
+	var district = {totalRep: 0, totalDem: 0, totalPop: 0, nodes:nodes};
+	return district;
+}
+
 function drawCity(city) {
-	console.log("rendering");
+	//console.log("rendering");
 	var percentDem = city.democrat/city.pop;
 	var percentRep = city.republican/city.pop;
 	if (percentRep > percentDem) {
@@ -42,15 +55,48 @@ function drawCity(city) {
 }
 
 function drawCityData(city, e) {
-	console.log("city data");
+	//console.log("city data");
 	ctx.fillStyle = "#606060";
-	ctx.drawRect(e.clientX, e.clientY, 30,50);
+	ctx.fillRect(translateX(e.clientX) - 2, translateY(e.clientY) - 2, 60,60);
+	ctx.fillStyle = "#ffffff";
+	ctx.font = "10px Arial";
+	ctx.fillText("Pop: " + city.pop, translateX(e.clientX) + 10, translateY(e.clientY) + 15);
+	ctx.fillText("Dem: " + city.democrat, translateX(e.clientX) + 10, translateY(e.clientY) + 25);
+	ctx.fillText("Rep: " + city.republican, translateX(e.clientX) + 10, translateY(e.clientY) + 35);
+
+}
+
+function translateX(x) {
+	return x - c.offsetLeft;
+}
+
+function translateY(y) {
+	return y - c.offsetTop;
+}
+
+function drawNode(node, pointInPath) {
+	if(pointInPath == 0) {
+		console.log("drawing");
+		ctx.beginPath();
+		ctx.arc(node.x,node.y,10,2*Math.PI, false);
+		ctx.fillStyle = "#000000";
+		ctx.fill();
+	} else {
+		ctx.lineTo(node.x, node.y);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(node.x,node.y,10,2*Math.PI, false);
+		ctx.fillStyle = "#000000";
+		ctx.fill();
+	}
+	ctx.beginPath();
+	ctx.moveTo(node.x, node.y);
 }
 
 function intersectCity(x,y,city) {
-	console.log("checking");
-	console.log(Math.hypot(x-city.x,y-city.y));
-	if(Math.hypot(x-city.x,y-city.y) < city.radius) {
+	//console.log("checking");
+	//console.log(Math.hypot(translateX(x)-city.x,translateY(y)-city.y));
+	if(Math.hypot(translateX(x)-city.x,translateY(y)-city.y) < city.radius + 5) {
 		return true;
 	} else {
 		return false;
@@ -58,26 +104,44 @@ function intersectCity(x,y,city) {
 }
 
 function updateDraw() {
-	console.log("drawing");
+	//console.log("drawing");
+	ctx.fillStyle = "lightgray";
+	ctx.fillRect(0,0,ctx.canvas.width,ctx.canvas.height);
 	for(var i = 0; i < cityList.length; i++) {
 		drawCity(cityList[i]);
+	}
+
+	for(var i = 0; i < workingNodes.length; i++) {
+		drawNode(workingNodes[i],i);
 	}
 }
 
 function processForm() {
-	console.log(document.forms["form"]["x"].value + " , " + document.forms["form"]["y"].value + " , " + document.forms["form"]["repPop"].value + " , " + document.forms["form"]["demPop"].value);
 	city = createCity(parseInt(document.forms["form"]["x"].value),parseInt(document.forms["form"]["y"].value),parseInt(document.forms["form"]["repPop"].value),parseInt(document.forms["form"]["demPop"].value));
 	cityList.push(city);
 	updateDraw();
-	console.log(cityList);
 }
 
 function updateMouse(e) {
+	updateDraw();
+	
 	for(var i = 0; i < cityList.length; i++) {
 		if(intersectCity(e.clientX, e.clientY, cityList[i])) {
-			drawCityData(cityList[i], e)
+			drawCityData(cityList[i], e);
 		}
 	}
 }
+
+function mouseDown(e) {
+	if(workingNodes.length === 0) {
+		workingNodes.push(createNode(null, translateX(e.clientX),translateY(e.clientY)));
+	} else {
+		workingNodes.push(createNode(workingNodes[workingNodes.length-1], translateX(e.clientX),translateY(e.clientY)));
+	}
+	console.log(workingNodes);
+	updateDraw();
+}
+
+
 
 
