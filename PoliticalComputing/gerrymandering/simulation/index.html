@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PoliComp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Dosis:400,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel = "stylesheet" href = "../../style.css">
+  <link rel = "stylesheet" href = "gerrysim.css">
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.png">
+</head>
+<body>
+  <nav id = "nav" class="navbar navbar-inverse">
+    <div class="container-fluid" id="custom-bootstrap-menu">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="../index.html">PoliComp</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Security<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="../security/index.html">Reading List</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gerrymandering<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Visual Simulation</a></li>
+              <li><a href="../info/index.html">Algorithms and Current Metrics</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Computer Policy<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="../../netneutrality">Net Neutrality</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="nav pull-right">
+          <form class="navbar-form" role="search">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit" onclick = "alert('This function has not yet been implemented!');"><i class="glyphicon glyphicon-search"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Welcome to the Gerrymandering Sandbox!</h3>
+      <p> Here is an open environment where you can play "manipulative politician"! It's simple, just use the side tabs to create cities and click to create a district. Districts can not overlap and must be a polygon! Have fun trying to game the system for either political party! </p>
+      <h4> Techniques of the Trade - Packing and Cracking </h4>
+      <p> If you have ever looked up Gerrymandering before you've probably heard of the gerrymandering technique of "packing and cracking". "Packing" refers to putting all the cities with majority one type of voter into one district. Then, creating more districts of another party, even if overall, the percentages of voters are not so drastically different. "Cracking" refers to the practice of splitting up a voter base of one party so that this party can never be a majority in a district. Again, even if this party has overall a comparable percent of voters, they will not be able to gain any district representation</p>
+      <p> Try using these two nefarious techniques to game the system for either political party. Have fun and become depressed when you realize the flaws of our political system. </p>
+    </div>
+
+  </div>
+
+  <script src = "modal.js"></script>
+
+  <canvas id = "canvas" style = "background-color:lightgray;" onmousemove = "updateMouse(event);" onclick = "mouseDown(event);"> </canvas> 
+  <script src = "tools.js"> </script>
+  <script src = "drawing.js"> </script>
+  <script src = "gerrysim.js"> </script>
+
+  <div id = "formArea"> 
+    <form name = "form">
+    <p> X: <input type="number" name="x" value = "50"> </p>
+    <p> Y: <input type="number" name="y" value = "50" > </p>
+    <p> Rep Pop: <input type="number" name="repPop" value = "10"> </p>
+    <p> Dem Pop: <input type="number" name="demPop" value = "15"> </p>
+    </form>
+    <p>
+      <button onclick = "processForm()"> Create City! </button>
+      <button onclick = "createRandomCities(1)"> Create Random City! </button>
+    </p>
+    <hr>
+    <p id = "pop"> Total Pop: </p>
+    <p id = "rep"> Total Republicans: </p>
+    <p id = "dem">  Total Democrats: </p>
+    <hr>
+    <p id = "demDistricts"> Rep Districts: </p>
+    <p id = "repDistricts"> Dem Districts: </p>
+    
+
+  </div>
+</body>
+</html>

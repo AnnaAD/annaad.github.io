@@ -10,12 +10,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <link rel = "stylesheet" href = "../style.css">
-  <link rel = "stylesheet" href = "gerrysim.css">
-
   <link rel="shortcut icon" type="image/png" href="/favicon.png">
 </head>
 <body>
-  <nav id = "nav" class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse">
     <div class="container-fluid" id="custom-bootstrap-menu">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -36,14 +34,14 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gerrymandering<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="../gerrymandering/index.html">Visual Simulation</a></li>
-              <li><a href="../GerrymanderingMap/index.html">Algorithms and Current Metrics</a></li>
+              <li><a href="../gerrymandering/simulation/index.html">Visual Simulation</a></li>
+              <li><a href="../gerrymandering/info/index.html">Algorithms and Current Metrics</a></li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Computer Policy<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Net Neutrality</a></li>
+              <li><a href="../netneutrality">Net Neutrality</a></li>
             </ul>
           </li>
         </ul>
@@ -60,16 +58,17 @@
       </div>
     </div>
   </nav>
-  <canvas id = "canvas" style = "background-color:lightgray;" onmousemove = "updateMouse(event);" onclick = "mouseDown(event);"> </canvas> 
-  <script src = "gerrysim.js"> </script>
-  <div id = "formArea"> 
-    <form name = "form">
-    <p> X: <input type="number" name="x" value = "50"> </p>
-    <p> Y: <input type="number" name="y" value = "50" > </p>
-    <p> Rep Pop: <input type="number" name="repPop" value = "10"> </p>
-    <p> Dem Pop: <input type="number" name="demPop" value = "15"> </p>
-    </form>
-    <button onclick = "processForm()"> Create City! </button>
-  </div>
-</body>
-</html>
+  <div class = "wholewidthsmall">
+    </div>
+
+    <div class = "content">
+
+      <div class="row">
+        <div class="justify col-md-11">
+          <h3>Net Neutrality</h3>
+          <p>This page is under construction.</p>         
+        </div>
+      </div>
+    </div>  
+  </body>
+  </html>
