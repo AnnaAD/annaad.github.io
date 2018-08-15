@@ -41,9 +41,9 @@ function calculateTotals() {
 	totalDemDistricts = 0;
 	totalRepDistricts = 0;
 	for(var i = 0; i< districtList.length; i++) {
-		if(districtList[i].totalDem >= districtList[i].totalRep) {
+		if(districtList[i].totalDem > districtList[i].totalRep) {
 			totalDemDistricts++;
-		} else {
+		} else if (districtList[i].totalDem < districtList[i].totalRep) {
 			totalRepDistricts++;
 		}
 	}

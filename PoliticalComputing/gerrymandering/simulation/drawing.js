@@ -17,7 +17,7 @@ function drawCityData(city, e) {
 	ctx.fillRect(mousePos.x - 2, mousePos.y - 2, 90,60);
 	ctx.fillStyle = "#000000";
 	ctx.font = "10px Arial";
-	ctx.fillText("Washington D.C.", mousePos.x + 5, mousePos.y + 10);
+	ctx.fillText(city.name, mousePos.x + 5, mousePos.y + 10);
 	ctx.fillText("Population: " + city.pop, mousePos.x + 5, mousePos.y + 25);
 	ctx.fillText("Democrats: " + city.democrat, mousePos.x + 5, mousePos.y + 35);
 	ctx.fillText("Republicans: " + city.republican, mousePos.x + 5, mousePos.y + 45);
@@ -38,8 +38,10 @@ function drawDistrictData(district) {
 	ctx.fillText("Republicans: " + district.totalRep, mousePos.x +5, mousePos.y + 42);
 	if(district.totalRep > district.totalDem) {
 		ctx.fillText("Vote: Republican" , mousePos.x + 5, mousePos.y + 55);
-	} else {
+	} else if (district.totalDem > district.totalRep) {
 		ctx.fillText("Vote: Democrat" , mousePos.x + 5, mousePos.y + 55);
+	} else {
+		ctx.fillText("Vote: Undecided" , mousePos.x + 5, mousePos.y + 55);
 	}
 }
 
