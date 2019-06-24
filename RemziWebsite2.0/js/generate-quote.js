@@ -5,7 +5,7 @@ $(document).ready(function(){
     var quotes = data.split("\n");
     var author = [];
     for(var i = 0; i < quotes.length; i++) {
-      author.append(quotes[i].split(" -")[1])
+      author.push(quotes[i].split(" -")[1])
       quotes[i] = quotes[i].split(" -")[0]
     }
 
