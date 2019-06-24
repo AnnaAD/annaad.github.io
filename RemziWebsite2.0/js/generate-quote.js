@@ -1,7 +1,7 @@
 
 
 $(document).ready(function(){
-  jQuery.get('quotes.txt', function(data) {
+  jQuery.get('/RemziWebsite2.0/quotes.txt', function(data) {
     var quotes = data.split("\n");
     var author = [];
     for(var i = 0; i < quotes.length; i++) {
