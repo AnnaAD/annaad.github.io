@@ -1,8 +1,7 @@
-quotes = "A man's best friend is his dog.\nComp Sci has hops!?\nBread makes you fat!?".split("\n");
 
 
 $(document).ready(function(){
-  jQuery.get('../quotes.txt', function(data) {
+  jQuery.get('quotes.txt', function(data) {
     var quotes = data.split("\n");
     var author = [];
     for(var i = 0; i < quotes.length; i++) {
