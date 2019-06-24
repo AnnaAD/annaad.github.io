@@ -9,6 +9,8 @@ $(document).ready(function(){
       if(quotes[i].trim() != "") {
         author.push(quotes[i].split(" -")[1])
         quotes[i] = quotes[i].split(" -")[0]
+      } else {
+        quotes.splice(1,i);
       }
     }
 
