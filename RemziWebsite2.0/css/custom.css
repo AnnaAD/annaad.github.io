@@ -1,0 +1,145 @@
+body {
+  background-position: center center;
+  background: url("../img/remzi-teaching.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#quote {
+  margin-bottom: 0;
+}
+
+#author {
+  margin-left: 15px;
+  margin-top: 0;
+}
+
+.teaching {
+  background-position: center center;
+  background: url("../img/remzi_student.JPG");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.research {
+  background-position: center center;
+  background: url("../img/remzi-formal.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.links {
+  background-position: center center;
+  background: url("../img/remzi-writes.JPG");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.navbar {
+  width: 100%;
+  background-color: rgba(0,0,0,0.85);
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+hr {
+  border-color: white;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: lightgray !important;
+}
+
+.navbar-brand:hover {
+  color: lightgray !important;
+}
+
+body {
+  background-color: transparent;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.rainbow-text:hover {
+  background-image: linear-gradient(to left, violet, #7600FB, #00E3FB, #05C933, yellow, orange, red);
+  -webkit-background-clip: text;
+  -webkit-background-color: transparent !important;
+  color: transparent !important;
+  -webkit-text-fill-color: linear-gradient(to left, violet, #7600FB, #00E3FB, #05C933, yellow, orange, red);
+}
+
+
+.black-box {
+  border-radius: 0;
+  background-color: rgba(0,0,0,0.9);
+  color: white;
+  padding: 30px;
+  float: right;
+}
+
+.remzi-welcome {
+  width: 50%;
+}
+
+.remzi-teaching {
+  width: 25%;
+}
+
+.remzi-research {
+  width: 60%;
+}
+
+.remzi-links {
+  width: 48%;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+a {
+    color: lightgray;
+}
+
+a:hover {
+  color: gray;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+.dropdown-menu {
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  border: 0;
+}
+
+@media (max-width: 700px) {
+  .black-box {
+    width: 90% !important;
+   /*float: none;
+   margin: auto;
+   margin-top: 50px;*/
+  }
+}
