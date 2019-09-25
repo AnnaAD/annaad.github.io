@@ -1,0 +1,253 @@
+body,html {
+  background-color: #171717;
+  color:white;
+  font-family: serif;
+  height:100%;
+  scroll-behavior: smooth;
+}
+
+/* Background Images for Specific Sections */
+
+.main-img {
+  background-image: url("../img/map.png");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+}
+
+.pattern-right {
+  background-image: url("../img/map-simple.png");
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.pattern-left {
+  background-image: url("../img/map-left.png");
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+/* All-Page Styling */
+
+h1,h2,h3{
+  font-family: 'Fredericka the Great', serif;
+}
+
+h4,h5,h6 {
+  font-family: serif;
+  font-weight: bold;
+}
+
+a {
+  color:#58A1BD;
+}
+
+a:hover {
+  color:#2B4E5E;
+}
+
+.sub-title {
+  margin-bottom: 0;
+  font-size: 15px;
+  color: #919EA4;
+}
+
+.img-in-col {
+  width: 90%;
+}
+
+.max-width {
+  max-width: 1200px;
+}
+
+.up-link {
+  position:relative;
+  top: -50px;
+}
+
+
+/* Navbar Styling */
+
+.navbar {
+  background-color: rgba(23,23,23,0.95)
+}
+
+.nav-link{
+  color:white !important;
+  font-family: 'Fredericka the Great', serif;
+}
+
+.nav-link:hover{
+  color:white !important;
+  text-decoration: underline;
+}
+
+.navbar-brand {
+  color:white !important;
+  font-family: 'Fredericka the Great', serif;
+}
+
+
+.navbar-brand:hover{
+  text-decoration: underline;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border: 1.5px solid white;
+}
+
+.half-nav {
+  width:260px;
+}
+
+.center-nav {
+  width:100px;
+}
+
+
+/* Large Header Styling */
+
+.centered-page-header {
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translate(-50%,0);
+  text-align: center;
+}
+
+.centered-page-header h1 {
+  font-size: 150px;
+  margin-bottom: -20px;
+}
+
+
+/* About Section styling */
+
+.small-logo {
+  width:100px;
+}
+
+
+/* People Section grid and card styling */
+
+.person {
+  width: calc(33% - 20px);
+  height: 200px;
+  margin: 10px;
+  border-radius: 0px;
+  color: white;
+  margin-top: 20px;
+  background-image: url("../img/map-mini.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.person img{
+ width: 100px;
+ height: 100px;
+ margin: 15px;
+ margin-top: 50px;
+ border-radius: 50%;
+}
+
+.person div {
+  margin-right: 15px;
+}
+
+.person p {
+  margin-bottom: 0;
+}
+
+.section-title {
+  text-align: left;
+}
+
+.justify-special {
+  justify-content: flex-start;
+}
+
+/* Styling for Workshop section */
+
+.included-img-right {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  vertical-align:top;
+  display:inline-block;
+  float: right;
+}
+
+.included-img-left {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  vertical-align:top;
+  display:inline-block;
+  float: left;
+  margin-right: 30px;
+}
+
+.workshop-box {
+  overflow-y: hidden;
+  margin-bottom: 50px;
+}
+
+
+
+/* Sponsor Section Styling */
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+.white-bg {
+  background-color: white;
+  color: #171717;
+}
+
+
+
+/* CSS for Faculty/Staff grid, makes grid one column on narrow screens. */
+@media (max-width:1050px) {
+  .person {
+    width: 50%;
+    min-width: 400px;
+  }
+
+  .justify-special {
+    justify-content: center;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+}
+
+/* CSS for content that should not be on mobile displays (smaller than md) */
+@media (max-width: 767px) {
+  .mobile-invisible {
+    display: none;
+  }
+
+  .included-img-left {
+    float: none;
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 20px !important;
+  }
+
+  .included-img-right {
+    float: none;
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 20px !important;
+  }
+
+}
