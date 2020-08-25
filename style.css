@@ -14,11 +14,11 @@
 }
 
 body {
-  background-color: #9F81F7;
+  background-color: #BFE5C1;
   margin: 0;
   padding: 0;
-  font-family: "Dosis"; 
-  /* background: url(http://i.imgur.com/UZKEjzG.png) no-repeat center center fixed; 
+  font-family: "Dosis";
+  /* background: url(http://i.imgur.com/UZKEjzG.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -33,7 +33,7 @@ body {
   margin: auto;
 }
 
-.content {  
+.content {
   padding: 15px;
 }
 
@@ -56,7 +56,7 @@ body {
 .shadow:before, #shadow:after
 {
   content:"";
-    position:absolute; 
+    position:absolute;
     z-index:-1;
     box-shadow:0 0 20px rgba(0,0,0,0.8);
     top:10px;
@@ -64,12 +64,10 @@ body {
     left:0;
     right:0;
     border-radius:100px / 10px;
-} 
+}
 .shadow:after
 {
-    right:10px; 
-    left:auto; 
+    right:10px;
+    left:auto;
     transform:skew(8deg) rotate(3deg);
 }
-
-
