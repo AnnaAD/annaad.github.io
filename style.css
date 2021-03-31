@@ -1,73 +1,35 @@
-.navbar {
+.jumbotron {
+  min-height: 50vh;
+  width: 100%;
+  background-color: black;
+  color: white;
+  margin: 0;
   border-radius: 0;
 }
-
-.social img{
-  width: 35px;
-  margin: 3px;
-  margin-top: 8px;
-}
-
-#header img {
-  max-width: 400px;
-  width: 100%;
-}
-
 body {
-  background-color: #BFE5C1;
   margin: 0;
   padding: 0;
-  font-family: "Dosis";
-  /* background: url(http://i.imgur.com/UZKEjzG.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */
+  font-family: 'Crimson Text', serif;
 }
 
-#content {
-  background-color: white;
-  padding: 0px;
-  width: 83%;
-  min-height: 100vh;
-  margin: auto;
+h1,h2,h3,h4 {
+  font-family: 'Crimson Text', serif;
+  font-weight: bold;
+}
+
+a {
+  color: #cc0000ff;
+}
+
+a:hover {
+  color: #950101ff;
+}
+
+.headshot {
+  border-radius: 50%;
 }
 
 .content {
-  padding: 15px;
-}
-
-#header {
-  background-color:lightgray;
-  margin: 0;
-  text-align: center;
-  padding: 30px;
-}
-
-.justify {
-  text-align: justify;
-}
-
-.shadow
-{
-    position:relative;
-    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-}
-.shadow:before, #shadow:after
-{
-  content:"";
-    position:absolute;
-    z-index:-1;
-    box-shadow:0 0 20px rgba(0,0,0,0.8);
-    top:10px;
-    bottom:10px;
-    left:0;
-    right:0;
-    border-radius:100px / 10px;
-}
-.shadow:after
-{
-    right:10px;
-    left:auto;
-    transform:skew(8deg) rotate(3deg);
+  width: 80%;
+  margin: auto;
 }
