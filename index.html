@@ -11,48 +11,139 @@
   <link rel="shortcut icon" type="image/png" href="/logo.png">
 </head>
 <body>
-<div class = "jumbotron text-center">
-  <!---
+  <div class = "jumbotron text-center">
+    <!---
     <img class = "mx-auto my-3 d-block headshot" src = "https://hatrabbits.com/wp-content/uploads/2018/10/risky-assumptions.jpg" height = "150px" width = "150px"/>
-    -->
+  -->
   <img class = "mx-auto d-block" src = "logo.png" height = "100px"/>
   <h1> Anna Arpaci-Dusseau </h1>
-  <p class = "my-0"> MIT Student. Class of 2023. Software Engineer. Security Enthusiast. </p>
-  <p class = "my-0"> Cambridge, Massachusetts. Born Oct 20. 2000. </p>
+  <p class = "my-0"> MIT Student. Class of 2023. Cambridge, Massachusetts.</p>
+  <p class = "my-0"> Software Engineer. Security Enthusiast. </p>
 </div>
-<div class = "content mx-auto">
-        <p><h3>Important Work</h3></p>
-        <p> <strong> September-February 2021 - <a href = "http://vis.csail.mit.edu/covid-story/">Covid-Vis Project</a></strong> In tangent with the CovidVis team as a UROP student, created an interactive story in React about the narrative around Covid-based data visualizations and how they developped over social media. Analyzes over 600,000 tweets with neural networks with the backbone of a <a href = "https://d3coviddash.netlify.app/"> flexible data dashboard </a> to explore the large dataset dynamically. </p>
-        <p> <strong> February-August 2020 - <a href = "http://cityscannerteck2.now.sh">CityScanner DataVis Dashboard</a></strong> Created with the CityScanner group as apart of a UROP. Made in JavaScript, HTML, CSS, this is a web-based data visualization dashboard integrated with Mapbox and D3-based graph widgets to show air quality data. The site is very flexible and can be easily adjusted via configuration files to deploy for different cities and with different data overlays. </p>
-        <p> <strong> August 2019 - <a href = "showcase/">WIRE Project Website</a></strong> A custom website designed with HTML, CSS, and Bootstrap made completely by hand by Anna A-D for the University of Wisconsin, Madison. It is mobile optimized and I generated custom maps for the background images using Python and Geopandas.</p>
-        <p> <strong> January-May 2019 - <a href = "https://github.com/AnnaAD/s19-city-t2"> City of Madison Data Science Project </a> </strong> A study of the Madison City Budget using data science in cooperation with Tyler Harter and students at UW Madison. I specifically focused on the Fire department and analyzing location of incidents, incident frequency, and overtime pay. I used Python, Jupyter Notebooks, and Pandas.</p>
-        <p> <strong> June 2020 - <a href = "http://emonation.herokuapp.com">Emo(na)tion</a></strong> A React/Node.js/MongoDB website in which users can log-in via Google Auth and place a marker on an emotional landscape representing where they are emotionally. A new form of social network. <a href = "https://github.com/AnnaAD/emonation-map">GitHub Repo.</a></p>
-        <p> <strong> January 2020 - <a href = "http://passtherecipe.herokuapp.com">Pass the Recipe</a></strong> A React/Node.js/MongoDB website created as apart of the MIT WebLab IAP class. It is a recipe website, but unlike a traditional recipe website, once you “Pass the Recipe” anyone can suggest edits, vote to find the best directions, and transform your recipe into something new.</p>
-        <p> <strong> June 2018 - <a href = "PoliticalComputing/index.html"> Political Computing. </a> </strong> A work in progress website, home to research and opinions about political science and its interaction with CS. Also hosts the JavaScript <a href = "PoliticalComputing/gerrymandering/simulation/index.html"> Gerrymandering Sandbox. </a> </p>
-        <p> <strong> November 2018 - <a href = "http://allianceonline.herokuapp.com"> Alliance Online. </a> </strong> Made in 24 hours by Anna A-D and Langston N., Alliance Online is a multiplayer strategy board game made in Python, Flask, Flask-SocketIO, JavaScript, and Postgresql. <a href = "https://github.com/lgnashold/MadHacks2019">GitHub Repo.</a></p>
-        <p> <strong> March 2019 - <a href = "http://annascorner.herokuapp.com"> Anna's Corner </a> </strong> Made in less than a day to learn about node.js and Postgresql, Anna's Corner is a simple blogging site. Drop by and leave a post! <a href = "https://github.com/AnnaAD/Node_Blog">GitHub Repo.</a></p>
-        <p> <strong> May-June 2018 - <a href = "dungeoncubed/index.html"> Dungeon Cubed. </a> </strong> Made over the course of several months by Anna A-D and Langston N., Dungeon Cubed is a isometric/3D dungeon crawling rougelike made in Unity/C# with inventory, enemies, skill/leveling, weapons, and 3 demo levels. <a href = "https://github.com/AnnaAD/DungeonGameUnity">GitHub Repo.</a></a>
+<div class = "content mx-auto py-5">
 
-<div class="row">
+  <h3>Important Work</h3>
+  <div class = "project-description">
+    <p>
+      <h5><a href = "http://vis.csail.mit.edu/covid-story/">Covid-Vis Project</a></h5>
+      <p><strong>September-February 2021</strong></p>
+      <p class = "code-tools">Using React, Next.JS, d3, Python</p>
+      <p>In tangent with the CovidVis team as a UROP student, created an interactive story in React about the narrative around Covid-based data visualizations and how they developped over social media. Analyzes over 600,000 tweets with neural networks with the backbone of a <a href = "https://d3coviddash.netlify.app/"> flexible data dashboard </a> to explore the large dataset dynamically.</p>
+    </p>
+  </div>
+  <div class = "project-description">
+    <p>
+      <h5><a href = "http://cityscannerteck2.now.sh">CityScanner DataVis Dashboard</a></h5>
+      <p><strong>February-August 2020</strong></p>
+      <p class = "code-tools">Frontend in: JavaScript, HTML/CSS, Mapbox, d3. Backend In: Python, OSMNX GIS Library, MongoDB, Django </p>
+      <p>Created with the CityScanner group as apart of a UROP. This is a web-based data visualization dashboard integrated with Mapbox and D3-based graph widgets to show air quality data. The site and it's interfaces were designed with flexbility in mind and can be easily adjusted via configuration files to deploy for different cities and with different data overlays.</p>
+    </p>
+  </div>
+  <div class = "project-description">
+    <p>
+      <h5><a href = "showcase/">WIRE Project Website</a></strong></h5>
+      <p><strong>August 2019</strong></p>
+      <p class = "code-tools">HTML, CSS, Bootstrap, Geopandas Map Background</p>
+      <p>A mobile optimized website template for the WIRE project for the University of Wisconsin, Madison.</p>
+    </p>
+  </div>
+  <div class = "project-description">
+    <p>
+      <p class = "github"> <a href = "https://github.com/AnnaAD/s19-city-t2">View on Github<img height = "15px" width = "15px" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png"/> </a></p>
+      <h5><a href = "https://github.com/AnnaAD/s19-city-t2"> City of Madison Data Science Project </a></strong></h5>
+      <p><strong>January-May 2019</strong></p>
+      <p class = "code-tools">Python, Jupyter Notebooks, Pandas, Geopandas</p>
+      <p>A study of the Madison City Budget using data science techniques in cooperation with Tyler Harter and students at UW Madison. I specifically focused on the Fire department and analyzing location of incidents, incident frequency, and overtime pay.</p>
+    </p>
+  </div>
+  <div class = "project-description">
+    <p>
+      <p class = "github"> <a href = "https://github.com/AnnaAD/emonation-map">View on Github<img height = "15px" width = "15px" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png"/> </a></p>
+      <h5><a href = "http://emonation.herokuapp.com"> Emo(na)tion </a></strong></h5>
+      <p><strong>June 2020</strong></p>
+      <p class = "code-tools">React, Node.js, MongoDB</p>
+      <p>Inspired by a group of friend's interest emotion-related vocabulariy, emonation is a website in which users can log-in via Google Auth and place a marker on an emotional landscape representing where they are emotionally. A new form of social network.</p>
+    </p>
+  </div>
+  <div class = "project-description">
+    <p>
+      <h5><a href = "http://passtherecipe.herokuapp.com"> Pass the Recipe </a></h5>
+      <p><strong>January 2020</strong></p>
+      <p class = "code-tools">React, Node.js, MongoDB</p>
+      <p>A website created as apart of the MIT WebLab IAP class. It is a recipe website, but unlike a traditional recipe website, once you “Pass the Recipe” anyone can suggest edits, vote to find the best directions, and transform your recipe into something new.</p>
+    </p>
+  </div>
+  <div class = "project-description">
+    <p>
+      <h5><a href = "PoliticalComputing/index.html"> Political Computing </a></h5>
+      <p><strong>June 2018</strong></p>
+      <p class = "code-tools">HTML/CSS, Bootstrap, JavaScript</p>
+      A work in progress website, home to research and opinions about political science and its interaction with CS. Also hosts the JavaScript <a href = "PoliticalComputing/gerrymandering/simulation/index.html"> Gerrymandering Sandbox. </a> </p>
+     </p>
+  </div>
+  <div class = "project-description">
+    <p>
+      <p class = "github"><a href = "https://github.com/lgnashold/MadHacks2019">View on Github<img height = "15px" width = "15px" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png"/> </a></p>
+
+      <h5><a href = "http://allianceonline.herokuapp.com"> Alliance Online</a></h5>
+      <p><strong>November 2018</strong></p>
+      <p class = "code-tools">Python, Flask, Flask-SocketIO, JavaScript, Postgresql</p>
+      <p>Made in 24 hours by Anna A-D and Langston N., Alliance Online is a multiplayer strategy board game.
+     </p>
+  </div>
+
+  <div class = "project-description">
+    <p>
+      <p class = "github"><a href = "https://github.com/AnnaAD/Node_Blog">View on Github<img height = "15px" width = "15px" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png"/> </a></p>
+
+      <h5><a href = "http://annascorner.herokuapp.com"> Anna's Corner </a> </h5>
+      <p><strong>March 2019</strong></p>
+      <p class = "code-tools">HTML/CSS, Node.js, Postgresql</p>
+      <p>Made in less than a day to learn about node.js and Postgresql, Anna's Corner is a simple blogging site. Drop by and leave a post!
+     </p>
+  </div>
+
+  <div class = "project-description">
+    <p>
+      <p class = "github"><a href = "https://github.com/AnnaAD/DungeonGameUnity">View on Github<img height = "15px" width = "15px" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png"/> </a></p>
+
+      <h5><a href = "dungeoncubed/index.html"> Dungeon Cubed. </a> </h5>
+      <p><strong>May-June 2018</strong></p>
+      <p class = "code-tools">C#, Unity3D</p>
+      <p> Made over the course of several months by Anna A-D and Langston N., Dungeon Cubed is a isometric/3D dungeon crawling rougelike made in Unity/C# with inventory, enemies, skill/leveling, weapons, and 3 demo levels. </p>
+     </p>
+  </div>
+  <hr class = "my-5"/>
+  <div class="row">
   <div class="justify col-md-4">
-    <h3> Projects </h3>
-    <p> My first programming projects were games I made as a seven year old in Scratch. After that, all my projects have been hosted on <a href = "http://github.com/AnnaAD"> GitHub. </a> I tinkered with JavaScript and HTML before taking AP CS A and learning Java.
-      Since my sophmore year, I have been making projects related to politics and computing while also participating in a few game jams.</p>
+    <h3> Personal Projects </h3>
+    <p> As many people, I constantly maintain a list of dream projects that I'm excited about and/or working on. Ask me about any of these and I'll like you! </p>
+    <ul>
+      <li><b>Island Flyover</b> - a Unity3D game where users take control of a low-poly plane and can explore. Inspired by my love of Wii Sports Resort island flyover mini game.</li>
+      <li><b>The Code</b> - A mysterious dungeon crawler video game in which players unlock an enigmatic code. Decrypting the code leads to a small real-world prize!</li>
+      <li><b>Rhythm Card Game</b> - a deckbuilding card game combined with a fun camp-style hand clapping rhythm game in which players use cards that dictate different beats to play!</li>
+
+    </ul>
     </div>
     <div class="justify col-md-4">
       <h3> About </h3>
-      <p> United States Citizen. MIT Student. Programmer. <strong>Proficient in: </strong> HTML, CSS, MySQL, Python, Java, JavaScript, C#/Unity, C, MongoDB</p> I also am avaliable to do any free lance work in web development or other programming. I can do one on one tutoring in game programming or programming in general as well. <a href = "mailto: anna.arpacidusseau@gmail.com"> Contact me! </a></p>
+      <p> <strong>Proficient in: </strong> HTML/CSS, SQL, React, Python, Java, JavaScript (d3), C#/Unity, C, MongoDB</p>
+      <p> My first programming projects were games I made as a seven year old in Scratch. After that, all my projects have been hosted on <a href = "http://github.com/AnnaAD"> GitHub. </a> I tinkered with JavaScript and HTML before taking AP CS A and learning Java.
+        Since my sophmore year, I have been making projects related to politics and computing while also participating in a few game jams.</p>
+      <p>I also am avaliable to do any free lance work in web development or other programming. I can do one on one tutoring in game programming or programming in general as well. <a href = "mailto: anna.arpacidusseau@gmail.com"> Contact me! </a></p>
     </div>
     <div class="justify col-md-4">
       <h3> Fun Stuff </h3>
-      <p>I am a big fan of peanut butter, corn mazes, and web developments.
-        I also enjoy reading and writing questionable quality novels. I love
-        my cat dearly, but she doesn't have a name. I tried a brief stint in
-        stand-up comedy (ask me about it). I love backpacking and once had
-        the opportunity to go on a 45 day hiking trip in Alaska.</p>
+      <p>I am a big fan of peanut butter, corn mazes, and web development.
+        I also enjoy reading and writing questionable quality novels. My family owns two nameless cats (yes it's a bit confusing).
+        I tried a brief stint in stand-up comedy (ask me about it), but as you may have gathered I do not have the knack.
+        I love backpacking and once had the opportunity to go on a 45 day hiking trip in Alaska where wolves and bears were sighted!</p>
+        <p> I am also an avid Ultimate Frisbee player and a captain of MIT's womens ultimate team-- Smite! </p>
       </div>
       <div class="clearfix visible-lg"></div>
     </div>
 
-  </div></body>
+
+  </div>
+</body>
 </html>

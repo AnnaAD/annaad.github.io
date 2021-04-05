@@ -9,7 +9,22 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #FAFAFA;
   font-family: 'Crimson Text', serif;
+}
+
+.github a {
+  color: #666666;
+}
+
+.github {
+  float: right;
+}
+
+.github img {
+  margin: 4px;
+  margin-bottom: 5px;
+  margin-top: 0;
 }
 
 h1,h2,h3,h4 {
@@ -27,6 +42,21 @@ a:hover {
 
 .headshot {
   border-radius: 50%;
+}
+
+.project-description {
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 5px 5px 5px lightgray;
+  background-color: white;
+}
+
+.code-tools {
+  font-family: monospace;
+}
+.project-description p{
+  margin: 0;
+  padding: 0;
 }
 
 .content {
