@@ -1,0 +1,153 @@
+<!doctype html>
+  <html>
+  <head>
+    <title> Anna's Word Game </title>
+    <style>
+
+    body {
+      font-family:sans-serif;
+    }
+
+    .game-row {
+      display: flex;
+    }
+
+    #answer {
+      display: flex;
+    }
+
+    .answer-slot {
+      width: 50px;
+      height: 50px;
+      border-bottom: 2px solid black;
+      margin: 5px;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .game-box {
+      width: 50px;
+      height: 50px;
+      border: 2px solid black;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .clicked {
+      background-color: lightyellow;
+    }
+
+    .present {
+      background-color: lightgreen;
+    }
+    </style>
+  </head>
+  <body>
+  <h1> word sweep </h1>
+  <p> how it works: click letters like hangman. but... it gives you the minimum distance to the next letter in the word. no diagonals in the distance! </p>
+  <div id = "game">
+  </div>
+
+  <div id = "answer">
+  </div>
+  <script>
+
+  let  word = JSON.parse(httpGet("https://random-word-api.herokuapp.com/word?number=1"))[0];
+
+  /*while(word.length > 8) {
+    word = httpGet("https://random-word-api.herokuapp.com/word?number=1");
+  }*/
+  //word = "reading"
+  play(word);
+
+  function play(word) {
+    let gameArea = document.getElementById("game");
+
+    let answer_spots = {};
+
+    let answer = document.getElementById("answer");
+
+    for(let i = 0; i < word.length; i++) {
+      if(!(word[i] in answer_spots)) {
+        answer_spots[word[i]] = [];
+      }
+      let box = document.createElement("div");
+      box.classList.add("answer-slot");
+      answer.appendChild(box);
+      answer_spots[word[i]].push(box);
+    }
+
+    let letters = ["a", "b", "c", "d", "e","f","g","h", "i", "j", "k", "l", "m", "n", "o", "p", "q","r","s","t","u","v","w","x","y","z"];
+    let guess_i = [];
+    shuffle(letters, word);
+
+    for(let i = 0; i < 5; i++) {
+      let row = document.createElement("div");
+      row.classList.add("game-row");
+      for(let j = 0; j < 5; j++) {
+        let box = document.createElement("div");
+        box.classList.add("game-box");
+        box.onclick = (e) => {clicked(e,i*5+j)};
+        box.textContent = letters[i*5+j];
+        row.appendChild(box);
+      }
+      gameArea.appendChild(row);
+    }
+    function clicked(e,letter) {
+      console.log(e);
+      console.log(letter);
+
+      let x1 = letter % 5;
+      let y1 = Math.floor(letter / 5);
+
+      distances = [];
+      for (let i = 0; i < word.length; i++) {
+        let index = letters.indexOf(word[i]);
+        if(!guess_i.includes(index)) {
+          let x2 = index % 5;
+          let y2 = Math.floor(index / 5);
+
+          distances.push(Math.abs(x1 - x2) + Math.abs(y1 - y2));
+        }
+      }
+      guess_i.push(letter);
+
+      if(word.includes(letters[letter])) {
+        e.target.classList.add("present");
+        answer_spots[letters[letter]].forEach((item) => {
+          item.textContent = letters[letter];
+        })
+      } else {
+        e.target.classList.add("clicked");
+      }
+
+      e.target.textContent = Math.min.apply(null,distances.filter(i => i != 0));
+    }
+
+    function shuffle(input) {
+      letters.sort(() => Math.random() - 0.5);
+      while(word.includes(input[input.length - 1])) {
+        letters.sort(() => Math.random() - 0.5);
+      }
+    }
+  }
+
+
+
+
+  function httpGet(theUrl)
+  {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+  }
+
+  </script>
+  </body>
+</html>
