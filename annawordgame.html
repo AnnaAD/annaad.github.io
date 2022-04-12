@@ -2,6 +2,7 @@
   <html>
   <head>
     <title> Anna's Word Game </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
 
     body {
@@ -10,10 +11,14 @@
 
     .game-row {
       display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     #answer {
       display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .answer-slot {
@@ -29,31 +34,55 @@
       align-items: flex-end;
     }
 
+    .content {
+      text-align: center;
+      width: 80%;
+      max-width: 1000px;
+      min-width: 450px;
+      margin: auto;
+    }
+
     .game-box {
-      width: 50px;
-      height: 50px;
+      width: 80px;
+      height: 80px;
       border: 2px solid black;
       font-size: 30px;
       font-weight: bold;
       text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: default;
+    }
+
+    .unclicked {
+      cursor: pointer;
+    }
+
+    .unclicked:hover {
+      background-color: #eeeeee;
     }
 
     .clicked {
-      background-color: lightyellow;
+      background-color: #B04C4C;
+      color: white;
     }
 
     .present {
-      background-color: lightgreen;
+      background-color: #4CB053;
+      color: white;
     }
     </style>
   </head>
   <body>
+  <div class = "content">
   <h1> word sweep </h1>
-  <p> how it works: click letters like hangman. but... it gives you the minimum distance to the next letter in the word. no diagonals in the distance! </p>
+  <p> <strong>How it works: </strong>Click letters to guess the word like hangman. But, after clicking, a number is revealed giving you the minimum distance on the board to another nearest letter in the word. There are no diagonals in the distance and the distance is calculated from the remaining hidden letters. </p>
   <div id = "game">
   </div>
 
   <div id = "answer">
+  </div>
   </div>
   <script>
 
@@ -92,6 +121,7 @@
       for(let j = 0; j < 5; j++) {
         let box = document.createElement("div");
         box.classList.add("game-box");
+        box.classList.add("unclicked");
         box.onclick = (e) => {clicked(e,i*5+j)};
         box.textContent = letters[i*5+j];
         row.appendChild(box);
@@ -117,6 +147,8 @@
       }
       guess_i.push(letter);
 
+      e.target.classList.remove("unclicked");
+
       if(word.includes(letters[letter])) {
         e.target.classList.add("present");
         answer_spots[letters[letter]].forEach((item) => {
@@ -127,6 +159,7 @@
       }
 
       e.target.textContent = Math.min.apply(null,distances.filter(i => i != 0));
+      e.target.textContent = e.target.textContent.replace("Infinity","∞");
     }
 
     function shuffle(input) {
