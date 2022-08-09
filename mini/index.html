@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title>Word Puzzle</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+  <script src = "game.js"></script>
+  <script src = "puzzle3.js"></script>
+  <div class = "container">
+    <h1 class = "text-center">So Many 5x5s</h1>
+    <p class = "text-center"> Want more than one NyTimes mini puzzle a day? This is the site for you! </p>
+    <hr>
+    <button onclick = "checkWin()" style = "float:right">Check</button>
+    <div class = "mx-auto" id = "timer">0:00</div>
+    <hr>
+    <div class = "row my-4">
+      <div class = "col-md-4">
+        <table cellspacing="0" cellpadding="0" class = "mx-auto" id = "main-table">
+          <!-- <tr>
+            <th><input class = "inputBox" id = "11" maxlength = "1"></input><p class = "number">1</p></th>
+            <th><input class = "inputBox" id = "12" maxlength = "1"></input><p class = "number">2</p></th>
+            <th><input class = "inputBox" id = "13" maxlength = "1"></input><p class = "number">3</p></th>
+            <th><input class = "inputBox" id = "14" maxlength = "1"></input><p class = "number">4</p></th>
+            <th><input class = "inputBox" id = "15" maxlength = "1"></input><p class = "number">5</p></th>
+          </tr>
+          <tr>
+            <th><input class = "inputBox" id = "21" maxlength = "1"></input><p class = "number">2</p></th>
+            <th><input class = "inputBox" id = "22" maxlength = "1"></input></th>
+            <th><input class = "inputBox" id = "23" maxlength = "1"></input></th>
+            <th><input class = "inputBox" id = "24" maxlength = "1"></input></th>
+            <th><input class = "inputBox" id = "25" maxlength = "1"></input></th>
+          </tr>
+          <tr>
+            <th><input class = "inputBox" id = "31" maxlength = "1"></input><p class = "number">3</p></th>
+            <th><input class = "inputBox" id = "32" maxlength = "1"></input></th>
+            <th><input class = "inputBox" id = "33" maxlength = "1"></input></th>
+            <th><input class = "inputBox" id = "34" maxlength = "1"></input></th>
+            <th><input class = "inputBox" id = "35" maxlength = "1"></input></th>
+          </tr>
+          <tr>
+            <th><input class = "inputBox" id = "41" maxlength = "1"></input><p class = "number">4</p></th>
+            <th><input class = "inputBox" id = "42" maxlength = "1"></input></th>
+            <th><input class = "inputBox" id = "43" maxlength = "1"></input></th>
+            <th><input class = "inputBox" id = "44" maxlength = "1"></input></th>
+            <th><input class = "inputBox" id = "45" maxlength = "1"></input></th>
+          </tr>
+          <tr>
+            <th><input class = "inputBox" id = "51" maxlength = "1"></input><p class = "number">5</p></th>
+            <th><input class = "inputBox" id = "52" maxlength = "1"></input></th>
+            <th><input class = "inputBox" id = "53" maxlength = "1"></input></th>
+            <th><input class = "inputBox" id = "54" maxlength = "1"></input></th>
+            <th><input class = "inputBox" id = "55" maxlength = "1"></input></th>
+          </tr> -->
+        </table>
+      </div>
+      <div class = "col-md-4">
+        <ol id = "acrossClues">
+          <lh>Across</lh>
+          <li id = "aclue1">clue</li>
+          <li id = "aclue2">clue</li>
+          <li id = "aclue3">clue</li>
+          <li id = "aclue4">clue</li>
+          <li id = "aclue5">clue</li>
+        </ol>
+      </div>
+      <div class = "col-md-4">
+        <ol id = "downClues">
+          <lh>Down</lh>
+          <li id = "dclue1">clue</li>
+          <li id = "dclue2">clue</li>
+          <li id = "dclue3">clue</li>
+          <li id = "dclue4">clue</li>
+          <li id = "dclue5">clue</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
