@@ -4,10 +4,21 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+
+  <script>
+    (function() {
+        var head= document.getElementsByTagName('head')[0];
+        var script= document.createElement('script');
+        var frameQueryString = document.location.href.split("id=")[1];
+        script.src= 'puzzle'+frameQueryString +'.js';
+        head.appendChild(script);
+     })();
+  </script>
   <script src = "game.js"></script>
-  <script src = "puzzle4.js"></script>
+
   <div class = "container">
     <h1 class = "text-center">So Many 5x5s</h1>
     <p class = "text-center"> Want more than one NyTimes mini puzzle a day? This is the site for you! </p>

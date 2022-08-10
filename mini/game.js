@@ -30,8 +30,8 @@ var timer = setInterval(function() {
 
 },1000);
 
-$(function(){
-
+function playGame(puzzle){
+  console.log("playing", puzzle);
   let firstValidId = null;
   let lastUsedNum = 1;
   let focusStarts = {};
@@ -265,7 +265,7 @@ $(function(){
     //e.stopImmediatePropagation();
   });
 
-});
+}
 
 function updateHighlights(target) {
   console.log(target);
