@@ -4,6 +4,15 @@ input {
   font-size: 36px;
   text-align: center;
   text-transform:uppercase;
+  z-index: 5;
+}
+
+.clues {
+  pointer-events: none
+}
+
+li {
+  pointer-events: all
 }
 
 th {
@@ -24,6 +33,7 @@ li {
   z-index: 1000;
   color: black;
   font-weight: normal;
+  pointer-events: none;
 }
 
 .highlighted {
@@ -78,4 +88,27 @@ button {
 
 lh {
   font-weight: bold;
+}
+
+input {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+input {
+  border:none;
+  background-image:none;
+  background-color:white;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+input::selection {
+  background-color: transparent;
 }
