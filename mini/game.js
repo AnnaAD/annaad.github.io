@@ -332,7 +332,7 @@ function checkWin() {
   for(var i = 1; i <= height; i++) {
     for(var j = 1; j <= width; j++) {
       var targetId = i + "" + j;
-      if(puzzle.grid[i-1][j-1] != "X" && $("#" + targetId).val() != puzzle.grid[i-1][j-1]) {
+      if(puzzle.grid[i-1][j-1] != "X" && $("#" + targetId).val().toLowerCase() != puzzle.grid[i-1][j-1]) {
         win = false;
         $("#" + targetId).addClass("incorrect");
       }
