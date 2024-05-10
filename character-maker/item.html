@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Creation</title>
+  <link href = "style.css" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Love+Ya+Like+A+Sister&family=Micro+5&family=Pixelify+Sans:wght@400..700&family=Slackside+One&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <h1>Item Creation</h1>
+
+  <div style = "display:flex">
+  
+
+
+  <div >
+    <div>
+      <input type="checkbox" id="bw" name="bw" />
+      <label for="bw">Easy Print</label>
+    </div>
+    <canvas id="itemCanvas" width="400" height="400"></canvas>
+    <p></p>
+    <button onClick = "clearCTX()"> Clear </button>
+
+    
+  </div>
+
+  <div>
+    <p> Name: <input id = "name"/> </p>
+    <button onClick="rollStats()"> Roll Stats</button>
+    <button onClick="drawCard()"> Submit</button>
+  </div>
+
+  <div>
+    <canvas id = "cardCanvas"> </canvas>
+    <a id="download" download="card.png">
+      <button onClick = "download()"> Save Card</button>
+    </a>
+  </div>
+
+  </div>
+  
+  
+  <script src = "utils.js"></script>
+  <script>
+
+  document.getElementById("bw").addEventListener("change", function() {
+      drawCard();
+  });
+    // JavaScript code for handling character customization
+
+    // Get canvas element
+    var canvas = document.getElementById("itemCanvas");
+    var ctx = canvas.getContext("2d");
+
+    clearCTX();
+
+     // Event listener for canvas click to draw a small icon
+     canvas.addEventListener("mousemove", function(event) {
+        const x = event.offsetX;
+        const y = event.offsetY;
+        if(mouse) {
+        // Draw a small circle as an example icon
+        ctx.beginPath();
+        ctx.arc(x, y, 3, 0, 2 * Math.PI);
+        ctx.fillStyle = "black";
+        ctx.fill();
+        }
+    });
+
+    var mouse;
+    canvas.addEventListener("mousedown", function(e) {
+        mouse = true;
+    });
+
+
+    canvas.addEventListener("mouseup", function(e) {
+        mouse = false;
+    });
+
+    
+
+    var speed = 0;
+    var aware = 0;
+    var health = 0;
+    var charisma = 0;
+    var initiative = 0;
+    var attack = 0;
+
+
+    var width = 100;
+    var height = 100;
+
+
+  function generateRandomNumbersWithSum(total, count) {
+    let numbers = [];
+    
+    // Generate random numbers
+    for (let i = 0; i < count; i++) {
+        let random = Math.random();
+        numbers.push(random);
+    }
+    
+    // Calculate sum of generated numbers
+    let sum = numbers.reduce((acc, num) => acc + num, 0);
+    
+    // Scale numbers to make sum to be total
+    numbers = numbers.map(num => Math.round(num / sum * total));
+    
+    return numbers;
+}
+
+  function clearCTX() {
+      console.log("clearing");
+      console.log(ctx);
+      ctx.fillStyle = "white";
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillRect(0,0, canvas.width, canvas.height);
+      ctx.fillStyle = "black";
+  }
+
+  function rollStats() {
+    nums = generateRandomNumbersWithSum(4,6);
+    health = nums[0];
+    speed = nums[1];
+    charisma = nums[2];
+    initiative = nums[3];
+    attack = nums[4];
+    aware = nums[5];
+    drawCard();
+  }
+  async function drawCard() {
+    let c2 = document.getElementById("cardCanvas");
+    c2.width = 750/2;
+    c2.height = 1050/2;
+    let ctx = c2.getContext("2d");
+
+    ctx.drawImage(canvas,0,20,750/2,750/2);
+
+   
+
+    let cardSrc = "res/card_template.png";
+    if(document.getElementById("bw").checked) {
+      cardSrc = "res/card_template_bw.png";
+    }
+    var back = await loadImage(cardSrc);
+    ctx.drawImage(back,0,0,750/2, 1050/2);
+
+    ctx.font = "20px Love Ya Like A Sister";
+    ctx.fillText(document.getElementById("name").value,35,335);
+
+    ctx.font = "30px Love Ya Like A Sister";
+    ctx.fillText("+"+aware,750/2 - 60,70);
+    ctx.font = "30px Love Ya Like A Sister";
+
+    ctx.fillText("+"+speed,750/2 - 60,135);
+
+    ctx.fillText("+"+charisma,750/2 - 60,140+65);
+    ctx.font = "30px Love Ya Like A Sister";
+    ctx.fillText("+"+initiative,750/2 - 60,270);
+    ctx.font = "30px Love Ya Like A Sister";
+
+    ctx.font = "40px Love Ya Like A Sister";
+    ctx.fillText("+"+attack,750/2 - 110,410);
+    ctx.font = "40px Love Ya Like A Sister";
+    ctx.fillStyle = "white";
+    ctx.fillText("+"+health,750/2 - 110,480);
+  }
+
+    function drawImageFlipped(image, x,y,width,height) {
+        ctx.save();
+        ctx.translate(x + width/2, y + width/2);
+        ctx.scale(-1, 1);
+        ctx.translate(-(x + width/2), -(y + width/2));
+        ctx.drawImage(image, 0,0);
+        ctx.restore();
+    }
+
+    
+
+    rollStats();
+  </script>
+</body>
+</html>

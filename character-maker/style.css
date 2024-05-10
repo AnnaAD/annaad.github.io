@@ -1,0 +1,38 @@
+.colorDiv {
+    padding: 1px;
+  }
+  .colorDiv input {
+    margin: 3px;
+  }
+
+  .col {
+    margin: 10px;
+    width: 300px;
+  }
+  body {
+    font-family: sans-serif;
+    
+  }
+
+  .header {
+    text-align: center;
+  }
+
+  canvas {
+    border: 3px solid black;
+    border-radius: 30px;
+  }
+
+  h1 {
+    font-family: 'Love Ya Like A Sister';
+  }
+
+  button {
+    background-color: #a6d6c6;
+    border: 3px solid #7da296;
+    margin: 1px;
+    border-radius: 60px;
+    padding: 5px;
+    font-weight: bold;
+
+  }

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Creation</title>
+  <link href = "style.css" rel="stylesheet"/>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Love+Ya+Like+A+Sister&family=Micro+5&family=Pixelify+Sans:wght@400..700&family=Slackside+One&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+  <h1>Character Creation</h1>
+
+  <div style = "display:flex">
+  
+
+
+  <div >
+    <div>
+        <input type="checkbox" id="bw" name="bw" />
+        <label for="bw">Easy Print</label>
+    </div>
+    <canvas id="characterCanvas" width="400" height="400"></canvas>
+  
+    <div class = "colorDiv">
+     
+       Skin <input type="color" id="skinColor" name="skinColor" value="#ff0000" />
+    
+  
+
+        Hair
+        <input type="color" id="hairColor" name="hairColor" value="#ffffff" />
+  
+
+
+        Shirt 
+        <input type="color" id="shirtColor" name="shirtColor" value="#ffffff" />
+   
+        Pant 
+       <input type="color" id="pantColor" name="pantColor" value="#ffffff" />
+        <br/>
+        Background
+        <input type="color" id="backColor" name="backColor" value="#ffffff" />
+      
+    </div>
+
+ 
+    
+    <div>
+      <button id="prevEye"><</button>
+      Eye
+      <button id="nextEye">></button>
+    </div>
+    
+    <div>
+      <button id="prevMouth"><</button>
+      Mouth
+      <button id="nextMouth">></button>
+    </div>
+    
+    <div>
+      <button id="prevNose"><</button>
+      Nose
+      <button id="nextNose">></button>
+    </div>
+    
+    <div>
+      <button id="prevEar"><</button>
+      Ear
+      <button id="nextEar">></button>
+    </div>
+  
+    <div>
+      <button id="prevHair"><</button>
+      Hair
+      <button id="nextHair">></button>
+    </div>
+
+    <div>
+        <button id="prevAcc"><</button>
+        Additional
+        <button id="nextAcc">></button>
+      </div>
+    
+  
+    <div class="width">
+      Width:
+      <input type="range" min="1" max="200" value="100" class="slider" id="WidthRange">
+    </div>
+    <div class="height">
+      Height:
+      <input type="range" min="1" max="200" value="100" class="slider" id="HeightRange">
+    </div>
+
+  </div>
+
+  <div class = "col">
+    <p> Name: <input id = "name"/> </p>
+    <button onClick="rollStats()"> Roll Stats</button>
+    <button onClick="drawCard()"> Submit</button>
+  </div>
+
+  <div>
+    <canvas id = "cardCanvas"> </canvas>
+    <a id="download" download="card.png">
+        <button onClick = "download()"> Save Card</button>
+    </a>
+  </div>
+
+  </div>
+  
+  <script src = "utils.js"></script>
+  <script src = "character.js"></script>
+  
+</body>
+</html>
