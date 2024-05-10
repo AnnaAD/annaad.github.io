@@ -147,6 +147,7 @@
     if(document.getElementById("bw").checked) {
       cardSrc = "res/card_template_bw.png";
     }
+    ctx.fillStyle = "black";
     var back = await loadImage(cardSrc);
     ctx.drawImage(back,0,0,750/2, 1050/2);
 

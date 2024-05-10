@@ -265,6 +265,7 @@ let c2 = document.getElementById("cardCanvas");
 c2.width = 750/2;
 c2.height = 1050/2;
 let ctx = c2.getContext("2d");
+ctx.fillStyle = "black";
 
 ctx.drawImage(canvas,0,20,750/2,750/2);
 
