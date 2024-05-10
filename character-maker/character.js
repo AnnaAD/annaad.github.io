@@ -171,6 +171,12 @@ async function loadCharacter() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillRect(0,0, canvas.width, canvas.height);
 
+    ctx.globalAlpha = 0.2;
+    ctx.fillStyle = "black";
+    ctx.fillRect(0,canvas.height/2, canvas.width, canvas.height/2);
+    ctx.globalAlpha = 1.0;
+
+
 
     // Draw character components
     // Draw skin
