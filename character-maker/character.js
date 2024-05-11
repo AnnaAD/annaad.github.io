@@ -294,6 +294,22 @@ ctx.font = "40px Love Ya Like A Sister";
 ctx.fillText(attack,750/2 - 100,410);
 ctx.fillStyle = "white";
 ctx.fillText(health,750/2 - 100,480);
+
+ctx.fillStyle = "black";
+ctx.font = "15px Love Ya Like A Sister";
+ctx.fillText("Actions (3 per turn):",40,360);
+ctx.fillText("- Move",40,375);
+ctx.fillText("- Search",40,390);
+ctx.fillText("- Attack",40,405);
+ctx.fillText("- Interrogate (free, 1 per turn)",40,420);
+ctx.fillText("- Steal",40,435);
+ctx.fillText("- Recieve Item",40,450);
+
+ctx.fillText("You must discard down ",40,475);
+ctx.fillText("to 1 held item at end of turn.", 40, 490)
+
+
+
 }
 
 function drawImageFlipped(image, x,y,width,height) {

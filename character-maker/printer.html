@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Creation</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Love+Ya+Like+A+Sister&family=Micro+5&family=Pixelify+Sans:wght@400..700&family=Slackside+One&display=swap" rel="stylesheet">
+    <style>
+
+    @media print {
+        h1,label,button,input,br {
+         display:none;
+       }
+       body {
+        margin: 0;
+        padding: 0;
+       }
+
+       @page { 
+        margin: 0;
+       }
+    .canvas_container {
+        max-width: calc(100% - 1px);
+        /*padding-bottom: 50%; /* Canvas is 2000x1000, this will set the height to 50% of width */
+        position: relative;
+    }
+    canvas{
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    }
+
+    .canvas_container {
+        max-width: calc(100% - 1px);
+        /*padding-bottom: 50%; /* Canvas is 2000x1000, this will set the height to 50% of width */
+        position: relative;
+    }
+    canvas{
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    </style>
+</head>
+<body>
+
+  <h1>Item Creation</h1>
+
+  <label>Image File:</label><br/>
+  <input type="file" id="imageLoader" name="imageLoader"/>
+  <button onclick="printPage()">Print</button>
+  <div class="canvas_container">
+    <canvas id="imageCanvas"></canvas>
+  </div>
+  
+  <script src = "utils.js"></script>
+  <script>
+
+    function printPage() {
+        console.log("here");
+        var printCanvas = document.getElementById("imageCanvas");
+        var printCanvasContext = printCanvas.getContext('2d');
+        rotate();
+    }
+
+    var myImageData, rotating = false;   
+
+var rotate = function () {
+    if (!rotating) {
+        rotating = true;            
+        // store current data to an image
+        myImageData = new Image();
+        myImageData.src = canvas.toDataURL();
+
+       myImageData.onload = function () {
+            // reset the canvas with new dimensions
+            canvas.width = ch;
+            canvas.height = cw;
+            cw = canvas.width;
+            ch = canvas.height;
+
+            ctx.save();
+            // translate and rotate
+            ctx.translate(cw, ch / cw);
+            ctx.rotate(Math.PI / 2);
+            // draw the previows image, now rotated
+            ctx.drawImage(myImageData, 0, 0);               
+            ctx.restore();
+
+            // clear the temporary image
+            myImageData = null;
+
+            rotating = false;
+            window.print();               
+        }
+    }
+}
+
+    var imageLoader = document.getElementById('imageLoader');
+    imageLoader.addEventListener('change', handleImage, false);
+    var canvas = document.getElementById('imageCanvas');
+    var ctx = canvas.getContext('2d');
+    let sf = 1;
+    canvas.width = 3300 * sf;
+    canvas.height = 2550 * sf;
+
+    console.log(canvas.width);
+    console.log(canvas.height);
+
+    //ctx.fillRect(0,0,canvas.width, canvas.height);
+
+    var cw = canvas.width;
+    var ch = canvas.height;
+
+    var i = 0;
+
+
+    function handleImage(e){
+        var reader = new FileReader();
+        reader.onload = function(event){
+            var img = new Image();
+            img.onload = function(){
+                let w = 750 * sf;
+                let h = 1050 * sf;
+                let x = w *(i % 4) + (canvas.width - w*4)/2;
+                let y = h * Math.floor(i / 4)+(canvas.width - h*2)/4;
+                ctx.drawImage(img,x,y,w,h);
+                ctx.strokeStyle = 'black';
+                ctx.lineWidth = 10*sf;
+                ctx.rect(x,y, w, h);
+                ctx.stroke();
+                i += 1;
+            }
+            img.src = event.target.result;
+        }
+        reader.readAsDataURL(e.target.files[0]);     
+    }
+  </script>
+</body>
+</html>
