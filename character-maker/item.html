@@ -124,13 +124,12 @@
   }
 
   function rollStats() {
-    nums = generateRandomNumbersWithSum(4,6);
+    nums = generateRandomNumbersWithSum(3,5);
     health = nums[0];
     speed = nums[1];
     charisma = nums[2];
-    initiative = nums[3];
-    attack = nums[4];
-    aware = nums[5];
+    attack = nums[3];
+    aware = nums[4];
     drawCard();
   }
   async function drawCard() {
@@ -162,11 +161,11 @@
 
     ctx.fillText("+"+charisma,750/2 - 60,140+65);
     ctx.font = "30px Love Ya Like A Sister";
-    ctx.fillText("+"+initiative,750/2 - 60,270);
+    ctx.fillText("+"+attack,750/2 - 60,270);
     ctx.font = "30px Love Ya Like A Sister";
 
     ctx.font = "40px Love Ya Like A Sister";
-    ctx.fillText("+"+attack,750/2 - 110,410);
+    ctx.fillText(" -",750/2 - 110,410);
     ctx.font = "40px Love Ya Like A Sister";
     ctx.fillStyle = "white";
     ctx.fillText("+"+health,750/2 - 110,480);

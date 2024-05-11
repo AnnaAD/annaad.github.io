@@ -35,8 +35,8 @@ var eyeImages = ["res/eye1.png", "res/eye2.png", "res/eye3.png","res/eye4.png", 
 var mouthImages = ["res/mouth1.png", "res/mouth2.png", "res/mouth3.png","res/mouth4.png", "res/mouth5.png", "res/mouth6.png","res/mouth7.png", "res/mouth8.png"];
 var noseImages = ["res/nose1.png", "res/nose2.png", "res/nose3.png","res/nose4.png", "res/nose5.png", "res/nose6.png"];
 var earImages = ["res/ear1.png", "res/ear2.png", "res/ear3.png"];
-var hairImages = ["res/hair1.png", "res/hair2.png", "res/hair3.png", "res/hair4.png","res/hair5.png","res/hair6.png","res/hair7.png","res/hair8.png","res/hair9.png","res/hair10.png","res/hair11.png","res/hair12.png"];
-var accImages = ["res/hair6.png", "res/acc1.png", "res/acc2.png", "res/acc3.png","res/acc4.png", "res/acc5.png" ];
+var hairImages = ["res/hair1.png", "res/hair2.png", "res/hair3.png", "res/hair4.png","res/hair5.png","res/hair6.png","res/hair7.png","res/hair8.png","res/hair9.png","res/hair10.png","res/hair11.png","res/hair12.png","res/hair13.png","res/hair14.png","res/hair15.png","res/hair16.png"];
+var accImages = ["res/hair6.png", "res/acc1.png", "res/acc2.png", "res/acc3.png","res/acc4.png", "res/acc5.png", "res/acc6.png", "res/acc7.png"];
 
 // Load initial character
 loadCharacter();
@@ -283,7 +283,9 @@ ctx.fillText(document.getElementById("name").value,35,335);
 ctx.font = "30px Love Ya Like A Sister";
 ctx.fillText(aware,750/2 - 50,70);
 
-ctx.fillText(speed,750/2 - 50,135);
+console.log(speed);
+//TODO: is this good balancing?
+ctx.fillText(Math.ceil(speed / 2),750/2 - 50,135);
 
 ctx.fillText(charisma,750/2 - 50,140+65);
 ctx.fillText(initiative,750/2 - 50,270);
